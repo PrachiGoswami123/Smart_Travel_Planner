@@ -2,39 +2,78 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destination- Smart Travel Planner</title>
-    <link rel="stylesheet" href="./output.css">
-    <link rel="icon"
-        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZHKp4kTpPBBHrWiHOCB_l1hJXY3QJOZn0Kw&s">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destination - Smart Travel Planner</title>
+  <link rel="icon"
+    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD1q73qIrlzHhPDBca18J11YGKzu1qtfa6Qg&s" />
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="bg-gray-200 min-h-screen">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="text-xl font-bold text-blue-600">SmartTravel</div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="./Home.html" class=" text-gray-700 hover:text-blue-600">Home</a>
-                    <a href="./Destination.html" class="text-gray-700 hover:text-blue-600">Destination</a>
-                    <a href="./Places.html">Places</a>
-                    <a href="./Budget.html">Budget</a>
-                </div>
-            </div>
+<body class="bg-sky-300 min-h-screen">
+  <!-- Nav Tag -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <div class="text-2xl font-bold text-blue-500">Smart Travels</div>
+        <div class="hidden md:flex space-x-6">
+          <a href="home.html" class="text-gray-700 hover:text-blue-600">Home</a>
+          <a href="destination.html" class="text-gray-700 hover:text-blue-600">Destination</a>
+          <a href="weather.html" class="text-gray-700 hover:text-blue-600">Weather</a>
+          <a href="places.html" class="text-gray-700 hover:text-blue-600">Places</a>
+          <a href="budget.html" class="text-gray-700 hover:text-blue-600">Budget</a>
         </div>
-    </nav>
-
-    <!-- Main-content -->
-    <div class="flex flex-col items-center justify-center mt-20">
-        <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center">
-            <h1 class="text-2xl font-bold mb-4 text-sky-500">City OverView</h1>
-            <p>You Searched For : </p>
-            <h2 id="cityName" class="text-xl font-semibold text-sky-600 mb-4"></h2>
-        </div>
+      </div>
     </div>
-    <script src="./Js/destination.js"></script>
+  </nav>
+
+  <!--Main Content-->
+  <div class="flex flex-col items-center justify-center mt-20">
+    <div class="bg-white p-8 rounded-xl shadow-lg  w-full max-w-md text-center">
+      <h1 class="text-2xl font-bold mb-4 text-sky-500">City Overview</h1>
+
+      <p class="text-gray-700 mb-2">You Searched For : </p>
+      <h2 id="cityName" class="text-xl font-semibold text-sky-600 mb-4"></h2>
+
+      <div id="loading" class="mt-4 text-gray-500 ">
+        Loading City Info...
+      </div>
+
+      <div id="cityInfo" class="hidden mt-4 bg-gradient-to-6 from-blue-50 to-sky-50 p-6 rounded-lg shadow-inner">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex items-center space-x-2">
+            
+            <span class="font-semibold">Latitude:</span>
+            <span id="lat" class="text-gray-800"></span>
+          </div>
+          <div class="flex items-center space-x-2">
+    
+            <span class="font-semibold">Longitude:</span>
+            <span id="lon" class="text-gray-800"></span>
+          </div>
+          <div class="flex items-center space-x-2">
+           
+            <span class="font-semibold">Country:</span>
+            <span id="country" class="text-gray-800"></span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="font-semibold">State:</span>
+            <span id="state" class="text-gray-800"></span>
+          </div>
+          <div class="flex items-center space-x-2 col-span-1 md:col-span-2">
+            
+            <span class="font-semibold">Population:</span>
+            <span id="population" class="text-gray-800"></span>
+          </div>
+        </div>
+      </div>
+
+      <p id="error" class=" hidden text-red-500 mt-2 font-semibold">City Not Found...</p>
+    </div>
+  </div>
+
+  <script src="./Js/destination.js"></script>
 </body>
 
 </html>
